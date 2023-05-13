@@ -1,0 +1,62 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:(10000,10000)
+            pos: self.pos
+    # Set screen name
+    name: "ratio"
+    orientation: 'vertical'
+
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:w
+        hint_text: "water"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.60}
+        
+        mode: "rectangle"
+        size_hint_x:0.55
+        
+    MDTextField:
+        id:s
+        hint_text: "sand"
+        mode: "rectangle"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.50}
+        size_hint_x:0.55
+    MDTextField:
+        id:a
+        hint_text: "aggregates"
+        
+        mode: "rectangle"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.40}
+        size_hint_x:0.55
+    
+       
+   
+
+    MDRectangleFlatButton:
+        text:"Back"
+        pos_hint:{'x': 0.33, 'y': 0.10}
+        size_hint:0.35,0.058
+        on_release:app.back()
+        # on_release:app.ai_builder("signin",2)
+  
+    
+        

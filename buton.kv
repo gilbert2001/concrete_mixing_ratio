@@ -1,0 +1,202 @@
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "button"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        
+        MDTopAppBar:
+            elevation:0
+            title:"Ratios measuring at (1:2:3)"
+            id:code
+            pos_hint_x: -0.03
+            #elevation:14
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['reload', lambda x: nav_drawer.toggle_nav_drawer()]]
+   
+       
+                    
+           
+      
+        
+        MDFlatButton:
+            text:""
+        #BoxLayout:
+        BoxLayout:  
+            size_hint: 1, 0.5
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:list
+                    OneLineListItem:
+                        id:r
+                        text: "TARGET RATIO : 1:2:3"
+                        secondary_text:"WATER"
+                        tertiary_text:"1"
+                        hint_text:"4"
+                    OneLineAvatarListItem:
+                        id:w
+                        text: "WATER : 1"
+                        secondary_text:"WATER"
+                        tertiary_text:"1"
+                        hint_text:"4"
+                        ImageLeftWidget:
+                            source: "red.png"
+                        # on_release:app.house(2)
+                        
+                    OneLineAvatarListItem:
+                        id:s
+                        text: "SAND : 2"
+                        secondary_text:"SAND"
+                        tertiary_text:"2"
+                        hint_text:"4"
+                        ImageLeftWidget:
+                            source: "green.png"
+                    OneLineAvatarListItem:
+                        id:a
+                        text: "C AGGREGATE : 3"
+                        secondary_text:" C AGGREG"
+                        tertiary_text:"3"
+                        hint_text:"4"
+                        ImageLeftWidget:
+                            source: "blue.png"
+                   
+        MDFlatButton:
+            text:""
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:1,0.1
+            halign:"center"
+          
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(1,0.2)
+                md_bg_color: (1,1,1,1)
+                padding:[20,20,20,20]
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"1"
+                    on_release:app.add_val(1,1) 
+                    line_color: 1,0,0,1
+                    text_color:1,0,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"1"
+                    on_release:app.add_val(2,1) 
+                    line_color: 0,1,0,1
+                    text_color:0,1,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"1"
+                    on_release:app.add_val(3,1) 
+                    line_color: 0,0,1,1
+                    text_color:0,0,1,1
+                Label:
+                    size_hint_x:0.06
+       
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:1,0.1
+            halign:"center"
+          
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(1,0.2)
+                md_bg_color: (1,1,1,1)
+                padding:[20,20,20,20]
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.5"
+                    on_release:app.add_val(1,0.5)
+                    line_color: 1,0,0,1
+                    text_color:1,0,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.5"
+                    on_release:app.add_val(2,0.5)
+                    line_color: 0,1,0,1
+                    text_color:0,1,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.5"
+                    on_release:app.add_val(3,0.5)
+                    line_color: 0,0,1,1
+                    text_color:0,0,1,1
+                Label:
+                    size_hint_x:0.06
+        
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:1,0.1
+            halign:"center"
+          
+            BoxLayout:
+                orientation:"horizontal"
+                size_hint:(1,0.2)
+                md_bg_color: (1,1,1,1)
+                padding:[20,20,20,20]
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.25"
+                    on_release:app.add_val(1,0.25)
+                    line_color: 1,0,0,1
+                    text_color:1,0,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.25"
+                    on_release:app.add_val(2,0.25)
+                    line_color: 0,1,0,1
+                    text_color:0,1,0,1
+                Label:
+                    size_hint_x:0.06
+                MDRectangleFlatButton:
+                    text:"0.25"
+                    on_release:app.add_val(3,0.25)
+                    line_color: 0,0,1,1
+                    text_color:0,0,1,1
+                Label:
+                    size_hint_x:0.06
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            padding:[20,20,20,20]
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:"Restart"
+                # on_release:root.manager.current = 'my_acc'
+                on_release:app.restart_v() 
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:'Ratios'
+                on_release:root.manager.current = 'ratio'
+                #md_bg_color: (52/256, 155/256, 143/256, 1) 
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.03)
